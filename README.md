@@ -21,7 +21,7 @@
 ### Configure Database
 Edit `src/main/resources/application.properties` and set DB:
 
-```properties
+### properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/final_db
 spring.datasource.username=postgres
 spring.datasource.password=postgres
@@ -29,12 +29,12 @@ spring.datasource.password=postgres
 spring.jpa.hibernate.ddl-auto=validate
 spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.yaml
 
-
+### start
 mvn clean test
 mvn spring-boot:run
 
 
-2) Database Migrations (Liquibase)
+### 2) Database Migrations (Liquibase)
 
 Migrations run automatically on application start.
 
@@ -54,7 +54,7 @@ Drop schema (or create a new DB)
 
 Run the application again
 
-3) Postman Collection
+### 3) Postman Collection
 
 Postman collection:
 
@@ -69,7 +69,7 @@ Select the collection file
 Set baseUrl = http://localhost:8080
 
 
-4) Architecture
+### 4) Architecture
 
 Layered architecture:
 
