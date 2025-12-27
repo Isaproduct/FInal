@@ -1,0 +1,124 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: demo
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: username
+                  type: VARCHAR(60)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(120)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(20)
+              - column:
+                  name: enabled
+                  type: BOOLEAN
+
+  - changeSet:
+      id: 2
+      author: demo
+      changes:
+        - createTable:
+            tableName: students
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: full_name
+                  type: VARCHAR(80)
+              - column:
+                  name: student_no
+                  type: VARCHAR(30)
+              - column:
+                  name: user_id
+                  type: BIGINT
+
+  - changeSet:
+      id: 3
+      author: demo
+      changes:
+        - createTable:
+            tableName: teachers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: full_name
+                  type: VARCHAR(80)
+              - column:
+                  name: department
+                  type: VARCHAR(80)
+              - column:
+                  name: user_id
+                  type: BIGINT
+
+  - changeSet:
+      id: 4
+      author: demo
+      changes:
+        - createTable:
+            tableName: courses
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: code
+                  type: VARCHAR(20)
+              - column:
+                  name: title
+                  type: VARCHAR(120)
+              - column:
+                  name: teacher_id
+                  type: BIGINT
+
+  - changeSet:
+      id: 5
+      author: demo
+      changes:
+        - createTable:
+            tableName: grades
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: value
+                  type: INT
+              - column:
+                  name: student_id
+                  type: BIGINT
+              - column:
+                  name: course_id
+                  type: BIGINT

@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-add-user-fields
+      author: step3
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: full_name
+                  type: varchar(120)
+                  constraints:
+                    nullable: false
+                  defaultValue: "Unknown User"
+
+              - column:
+                  name: email
+                  type: varchar(120)
+                  constraints:
+                    nullable: true
+
+        - addUniqueConstraint:
+            tableName: users
+            columnNames: email
+            constraintName: uk_users_email
